@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.prevu.prevu" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" /> <!-- To retrieve the account name (email) as part of sign-in: -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" /> <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".prevu"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.android.prevu.rechercheLivre.Recherche"
+            android:icon="@mipmap/ic_launcher_search"
+            android:label="@string/title_activity_recherche" >
+        </activity>
+        <activity
+            android:name="com.android.prevu.visualisation.Visualisation"
+            android:icon="@mipmap/ic_launcher_viz"
+            android:label="@string/title_activity_visualisation" >
+        </activity>
+        <activity
+            android:name=".About"
+            android:icon="@mipmap/ic_launcher_about"
+            android:label="@string/title_activity_about" >
+        </activity>
+        <activity
+            android:name="com.android.prevu.rechercheLivre.InformationLivre"
+            android:icon="@mipmap/ic_launcher_search"
+            android:label="@string/title_activity_information__livre" >
+        </activity>
+        <activity
+            android:name="com.android.prevu.rechercheLivre.InformationAuteur"
+            android:label="@string/title_activity_information__auteur" >
+        </activity>
+        <activity
+            android:name="com.android.prevu.compte.LoginActivity"
+            android:icon="@mipmap/ic_launcher_compte"
+            android:label="@string/title_activity_login"
+            android:windowSoftInputMode="adjustResize|stateVisible" >
+        </activity>
+        <activity
+            android:name="com.android.prevu.compte.Deconnection"
+            android:label="@string/title_activity_deconnection" >
+        </activity>
+        <activity
+            android:name="com.android.prevu.visualisation.VisualisationInfo"
+            android:icon="@mipmap/ic_launcher_viz"
+            android:label="@string/title_activity_visualisation_info" >
+        </activity>
+        <activity
+            android:name="com.android.prevu.visualisation.LivresPopulaires"
+            android:label="@string/title_activity_livres_populaires" >
+        </activity>
+        <activity
+            android:name="com.android.prevu.compte.LoginActivity1"
+            android:label="@string/title_activity_login1" >
+        </activity>
+    </application>
+
+</manifest>

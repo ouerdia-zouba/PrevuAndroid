@@ -1,0 +1,44 @@
+<html>
+<head>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+    google.load('visualization', '1', {packages: ['corechart', 'line']});
+    google.setOnLoadCallback(drawLogScales);
+
+    function drawLogScales() {
+          var data = new google.visualization.DataTable();
+         data.addColumn('string', 'semestre');
+
+          data.addColumn('number', 'issues');
+       var tab= JSON.parse(Android.getJsonResponse());
+
+       data.addRows(tab.length);
+       for (var i = 0; i < tab.length; i++) {
+         data.setCell(i,0 , tab[i].semestre);
+          data.setCell(i, 1, tab[i].issues);
+
+              }
+
+          var options = {
+'title':'Nombre d\'emprunts par semestre',
+            hAxis: {
+              title: 'semestre',
+              logScale: true
+            },
+            vAxis: {
+              title: 'nombre emprunts',
+              logScale: false
+            },
+            colors: ['#a52714', '#097138']
+          };
+
+          var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+          chart.draw(data, options);
+        }
+    </script>
+</head>
+<body>
+<div id="chart_div"></div>
+Voici la courbe qui représente l'évolution du nombre d'emprunts par semestre durant les quatres dernières années
+</body>
+</html>

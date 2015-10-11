@@ -1,0 +1,91 @@
+
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+tools:context="com.android.prevu.visualisation.Visualisation">
+
+<item
+    android:id="@+id/menu_search"
+    android:icon="@drawable/ic_action_search"
+    android:showAsAction="ifRoom"
+    android:title="@string/menu_search"/>
+<item
+    android:id="@+id/menu_refresh"
+    android:icon="@drawable/ic_action_refresh"
+    android:showAsAction="ifRoom"
+    android:title="@string/menu_refresh"/>
+<item
+    android:id="@+id/menu_help"
+    android:icon="@drawable/ic_action_help"
+    android:showAsAction="ifRoom"
+    android:title="@string/menu_help"/>
+<item
+    android:id="@+id/menu_about"
+    android:icon="@drawable/ic_action_about"
+    android:showAsAction="never"
+    android:title="@string/menu_about"/>
+<item
+    android:id="@+id/menu_settings"
+    android:icon="@drawable/ic_action_settings"
+    android:showAsAction="never"
+    android:title="@string/menu_settings"/>
+
+    <item
+        android:id="@+id/item1"
+        android:titleCondensed="Item 1"
+        android:title="Nombre total d’emprunts "
+        android:checkable="true">
+        <menu>
+            <item
+                android:id="@+id/item1.1"
+                android:title="par mois"
+                android:checkable="true">
+            <menu>
+
+                <item
+                    android:id="@+id/item2012"
+                    android:title="Mois 2012"
+                    android:checkable="true" />
+                <item
+                    android:id="@+id/item2013"
+                    android:title="Mois 2013"
+                    android:checkable="true"/>
+                <item
+                    android:id="@+id/item2014"
+                    android:title="Mois 2014"
+                    android:checkable="true"/>
+            </menu>
+            </item>
+
+            <item
+                android:id="@+id/itemSemestre"
+                android:title="par semestre"
+                android:checkable="true"/>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/item2"
+        android:title="Nombre d’emprunt par catégories des livres"></item>
+    <item
+        android:id="@+id/item3"
+        android:title="Videttes matière les plus empruntés par année">
+
+    </item>
+    <item
+        android:id="@+id/item4"
+        android:title="Nombre d'emprunt par ufr">
+
+    </item>
+    <item
+        android:id="@+id/item5"
+        android:title="Nombre d'emprunt par jour de semaine">
+
+    </item>
+    <item
+        android:id="@+id/item6"
+        android:title="Nombre d'emprunteur par jour de semaine">
+
+    </item>
+
+
+</menu>

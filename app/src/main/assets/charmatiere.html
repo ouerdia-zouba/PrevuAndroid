@@ -1,0 +1,46 @@
+<html>
+<head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+    google.load("visualization", "1", {packages:["corechart"]});
+    google.setOnLoadCallback(drawSeriesChart);
+
+    function drawSeriesChart() {
+
+    var data = new google.visualization.DataTable();
+data.addColumn('string', 'matiere');
+data.addColumn('number', 'annee');
+data.addColumn('number', 'total');
+data.addColumn('string', 'ufr');
+data.addColumn('number', 'totalEmrunteur');
+
+
+var tab= JSON.parse(Android.getJsonResponse());
+data.addRows(tab.length);
+
+for (var i = 0; i < tab.length; i++) {
+data.setCell(i,0, tab[i].matiere);
+data.setCell(i, 1, parseInt(tab[i].annee));
+data.setCell(i, 2, parseInt(tab[i].total));
+data.setCell(i, 3, 'UFR');
+data.setCell(i, 4, parseInt(tab[i].total));
+
+}
+
+
+      var options = {
+        title: 'Correlation between life expectancy, fertility rate and population of some world countries (2010)',
+        hAxis: {title: 'a'},
+        vAxis: {title: 'b'},
+        bubble: {textStyle: {fontSize: 11}}
+      };
+
+      var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
+      chart.draw(data, options);
+    }
+    </script>
+</head>
+<body>
+<div id="series_chart_div"></div>
+</body>
+</html>

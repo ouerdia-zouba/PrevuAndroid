@@ -1,0 +1,48 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.android.prevu.applicationprevu.AboutPrevuActivity">
+
+    <TextView
+        android:id="@+id/descriptif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:textIsSelectable="true"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:text="Descriptif"
+        android:layout_gravity="center_horizontal"/>
+    <ImageView
+        android:id="@+id/logoPrevu"
+        android:src="@drawable/prevulogo"
+        android:layout_width="400px"
+        android:layout_height="400px"
+        android:layout_gravity="center_horizontal"
+        ></ImageView>
+    <TextView
+        android:id="@+id/aboutPrevu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:textIsSelectable="true"
+        android:textStyle="bold"
+        android:text="@string/about"
+        android:layout_gravity="center_horizontal"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:autoLink="web"
+        android:text="http://tactiques.org/prevu/application/#/"
+        android:textStyle="bold" />
+
+
+    <!--<WebView
+        android:id="@+id/web"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>-->
+
+</LinearLayout>

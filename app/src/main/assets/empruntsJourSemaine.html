@@ -1,0 +1,55 @@
+<html>
+<head>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+      //Load the Visualization API and the piechart package
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+      // Create the data table.
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'dayOfWeek');
+      data.addColumn('number', 'issues');
+
+
+
+
+//data.addRows(Android.getListIssueSize());
+var tab= JSON.parse(Android.getJsonResponse());
+
+data.addRows(tab.length);
+for (var i = 0; i < tab.length; i++) {
+  data.setCell(i,0 , tab[i].dayOfWeek);
+   data.setCell(i, 1, tab[i].issues);
+       }
+
+
+
+      // Set chart options
+      var options = {'title':'Nombre d\'emprunts par jour de semaine',
+                    pieHole: 0.4,
+                    sliceVisibilityThreshold: .000001
+                     };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+    </script>
+</head>
+
+<body>
+<div id="chart_div"></div>
+Ce diagramme montre les habitudes des emprunteurs par rapport aux jours de la semaine
+</body>
+</html>

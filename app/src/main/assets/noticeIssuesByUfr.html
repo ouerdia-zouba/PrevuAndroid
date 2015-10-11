@@ -1,0 +1,113 @@
+<html>
+<head>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+      google.load("visualization", "1.1", {packages:["bar"]});
+         google.load('visualization', '1.0', {'packages':['corechart']});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+       var data = new google.visualization.DataTable();
+      data.addColumn('string', 'ufr');
+      data.addColumn('number', 'issues');
+
+
+
+
+//data.addRows(Android.getListIssueSize());
+var tab= JSON.parse(Android.getRetourUfr());
+
+data.addRows(tab.length);
+for (var i = 0; i < tab.length; i++) {
+  data.setCell(i,0 , tab[i].ufr);
+   data.setCell(i, 1, tab[i].issues);
+       }
+
+
+
+      // Set chart options
+      var options = {'title':'Nombre total d\'emprunts par Ufr',
+                    pieHole: 0.4,
+                    sliceVisibilityThreshold: .000001
+                     };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+
+
+
+
+
+
+         var data2 = new google.visualization.DataTable();
+         data2.addColumn('string', 'niveau');
+
+          data2.addColumn('number', 'issues');
+
+
+
+       var tab2= JSON.parse(Android.getChaine());
+
+       data2.addRows(tab2.length);
+       for (var i = 0; i < tab2.length; i++) {
+         data2.setCell(i,0 , tab2[i].niveau);
+          data2.setCell(i, 1, tab2[i].issues);
+
+              }
+
+        var options2 = {
+          chart: {
+            title: 'Nombre total d\'emprunts par niveau'
+          },
+          bars: 'horizontal' // Required for Material Bar Charts.
+        };
+
+        var chart2 = new google.charts.Bar(document.getElementById('barchart_material'));
+
+        chart2.draw(data2, options2);
+
+
+
+
+              var data4 = new google.visualization.DataTable();
+      data4.addColumn('string', 'Description');
+      data4.addColumn('number', 'issues');
+
+
+
+
+
+var tab4= JSON.parse(Android.getChaine1());
+
+data4.addRows(tab4.length);
+for (var i = 0; i < tab4.length; i++) {
+  data4.setCell(i,0 , tab4[i].description);
+   data4.setCell(i, 1, tab4[i].issues);
+       }
+
+
+
+
+
+      // Set chart options
+      var options4 = {'title':'Nombre total d\'emprunts par Catégorie'};
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart4 = new google.visualization.PieChart(document.getElementById('chart_div1'));
+      chart4.draw(data4, options4);
+
+
+
+      }
+    </script>
+</head>
+<body>
+<div id="chart_div">
+</div>
+<div id="barchart_material">
+</div>
+
+<div id="chart_div1">
+</div>
+</body>
