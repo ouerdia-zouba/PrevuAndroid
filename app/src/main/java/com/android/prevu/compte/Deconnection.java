@@ -60,14 +60,10 @@ public class Deconnection extends Activity {
         // get user data from session
         HashMap<String, String> user = session.getUserDetails();
 
-        // name
-        String name = user.get(SessionManagement.KEY_NAME);
 
         // email
         String email = user.get(SessionManagement.KEY_EMAIL);
 
-        // displaying user data
-        lblName.setText(Html.fromHtml("Name: <b>" + name + "</b>"));
         lblEmail.setText(Html.fromHtml("Email: <b>" + email + "</b>"));
 
 
