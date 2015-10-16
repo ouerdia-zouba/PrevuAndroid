@@ -49,4 +49,8 @@
      <string name="title_activity_visualisation_info">VisualisationInfo</string>
      <string name="title_activity_livres_populaires">LivresPopulaires</string>
    <string name="title_activity_login1">LoginActivity1</string>
+    <string name="title_activity_grid_view_example">GridViewExampleActivity</string>
+    <string name="title_activity_animation">Animation</string>
+    <string name="title_activity_fragment_custom_animations">FragmentCustomAnimations</string>
+    <string name="title_activity_card_flip">CardFlipActivity</string>
  </resources>

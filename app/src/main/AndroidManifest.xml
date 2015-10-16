@@ -69,6 +69,22 @@
             android:name="com.android.prevu.compte.LoginActivity1"
             android:label="@string/title_activity_login1" >
         </activity>
+        <activity
+            android:name=".GridViewExampleActivity"
+            android:label="@string/title_activity_grid_view_example" >
+        </activity>
+        <activity
+            android:name=".Animation"
+            android:label="@string/title_activity_animation" >
+        </activity>
+        <activity
+            android:name=".FragmentCustomAnimations"
+            android:label="@string/title_activity_fragment_custom_animations" >
+        </activity>
+        <activity
+            android:name=".CardFlipActivity"
+            android:label="@string/title_activity_card_flip" >
+        </activity>
     </application>
 
 </manifest>

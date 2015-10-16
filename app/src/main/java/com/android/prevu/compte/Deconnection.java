@@ -19,10 +19,12 @@ import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class Deconnection extends Activity {
+    private ListView listLivreUtilisateur;
 
     // Alert Dialog Manager
     AlertDialogManager alert = new AlertDialogManager();
@@ -41,11 +43,12 @@ public class Deconnection extends Activity {
         // Session class instance
         session = new SessionManagement(getApplicationContext());
 
-        TextView lblName = (TextView) findViewById(R.id.lblName);
+        //TextView lblName = (TextView) findViewById(R.id.lblName);
         TextView lblEmail = (TextView) findViewById(R.id.lblEmail);
 
         // Button logout
         btnLogout = (Button) findViewById(R.id.btnLogout);
+        listLivreUtilisateur = (ListView) findViewById(R.id.listViewLivresUtilisateur);
 
         Toast.makeText(getApplicationContext(), "User Login Status: " + session.isLoggedIn(), Toast.LENGTH_LONG).show();
 
@@ -64,7 +67,8 @@ public class Deconnection extends Activity {
         // email
         String email = user.get(SessionManagement.KEY_EMAIL);
 
-        lblEmail.setText(Html.fromHtml("Email: <b>" + email + "</b>"));
+       // lblEmail.setText(Html.fromHtml("Email: <b>" + email + "</b>"));
+        lblEmail.setText(Html.fromHtml("<b>" + email + "</b>"));
 
 
         /**
