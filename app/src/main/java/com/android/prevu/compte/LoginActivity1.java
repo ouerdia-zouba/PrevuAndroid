@@ -107,15 +107,9 @@ public class LoginActivity1 extends Activity implements View.OnClickListener{
                                     // For testing i am stroing name, email as follow
                                     // Use user real data
                                     session.createLoginSession(txtUsername.getText().toString());
-                                    // Staring MainActivity
-                                    ///Intent i = new Intent(getApplicationContext(), MainActivity.class);
-
 
                                     Intent i = new Intent(getApplicationContext(), Deconnection.class);
-                                    startActivity(i);
-                                    finish();
-                                    //getApplicationContext().startActivity(i);
-
+                                    getApplicationContext().startActivity(i);
 
 
                                 }

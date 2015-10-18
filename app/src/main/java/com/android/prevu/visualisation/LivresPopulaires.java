@@ -56,7 +56,7 @@ public class LivresPopulaires extends Activity   implements AdapterView.OnItemSe
     AuthorAdapter authorAdapter;
     private String lienWebService;
     private String lienJavaScript;
-    private ListView listVisualisationLivre;
+    ListView listVisualisationLivre;
     private Spinner spinner;
     String annee;
 

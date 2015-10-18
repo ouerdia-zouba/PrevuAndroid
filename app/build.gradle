@@ -26,7 +26,7 @@ android {
     }
     sourceSets {
         main {
-            res.srcDirs = ['src/main/res', 'drawable-hdpi', 'src/main/res/drawable-hdpi/', 'src/main/res/drawable-mdpi', 'libs', 'src/main/libs', 'src/main/res/mipmap', 'src/main/res/anim', 'src/main/res/animator']
+            res.srcDirs = ['src/main/res', 'drawable-hdpi', 'src/main/res/drawable-hdpi/', 'src/main/res/drawable-mdpi', 'libs', 'src/main/libs', 'src/main/res/mipmap']
         }
     }
 }

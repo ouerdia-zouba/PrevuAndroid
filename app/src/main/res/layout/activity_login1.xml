@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Email"
+        android:text="Username (Enter 'test')"
         android:singleLine="true"
         android:layout_marginBottom="5dip"/>
 
@@ -24,7 +24,7 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Mot de passe"
+        android:text="Password (Enter 'test')"
         android:layout_marginBottom="5dip"/>
 
     <!-- Password input text -->

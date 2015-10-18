@@ -79,7 +79,7 @@ public class prevu extends Activity implements View.OnClickListener{
         }
 
          else if (v.getId() == R.id.compte) {
-            Intent i = new Intent(this, FragmentCustomAnimations.class);
+            Intent i = new Intent(this, LoginActivity1.class);
             startActivity(i);
         }
     }
