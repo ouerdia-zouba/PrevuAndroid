@@ -65,7 +65,7 @@ public class Deconnection extends Activity {
         String email = user.get(SessionManagement.KEY_EMAIL);
 
         lblEmail.setText(Html.fromHtml("Email: <b>" + email + "</b>"));
-
+ //test
 
         /**
          * Logout button click event
