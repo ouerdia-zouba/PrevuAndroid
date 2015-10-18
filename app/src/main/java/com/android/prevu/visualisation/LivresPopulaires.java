@@ -56,7 +56,7 @@ public class LivresPopulaires extends Activity   implements AdapterView.OnItemSe
     AuthorAdapter authorAdapter;
     private String lienWebService;
     private String lienJavaScript;
-    ListView listVisualisationLivre;
+    private ListView listVisualisationLivre;
     private Spinner spinner;
     String annee;
 
@@ -86,7 +86,7 @@ public class LivresPopulaires extends Activity   implements AdapterView.OnItemSe
         prgDialog.setMessage("Please wait...");
         prgDialog.setCancelable(true);
 
-       }
+    }
 
 
     public void invokeWSLivre(RequestParams params, String lienWebService) {
@@ -109,7 +109,7 @@ public class LivresPopulaires extends Activity   implements AdapterView.OnItemSe
                             listBook = sMapper.readValue(response, new TypeReference<ArrayList<Book>>() {
                                     }
                             );
-
+                            new GetBookThumb().execute();
                             bookAdapter = new BookImageAdapter(getBaseContext(),
                                     LivresPopulaires.this, listBook);
                             listVisualisationLivre.setAdapter(bookAdapter);
@@ -143,7 +143,39 @@ public class LivresPopulaires extends Activity   implements AdapterView.OnItemSe
                         }
                     }
                 });}
+    private class GetBookThumb extends AsyncTask<String, Void, String> {
+        //get thumbnail
+        @Override
+        protected String doInBackground(String... thumbURLs) {
+//attempt to download image
+            try {
+//try to download
+                BufferedInputStream thumbBuff = null;
+                InputStream thumbIn =  null;
+                for (Book book:
+                        listBook) {
+                    URL thumbURL = new URL(book.getImage());
+                    URLConnection thumbConn = thumbURL.openConnection();
+                    thumbConn.connect();
+                    thumbIn = thumbConn.getInputStream();
+                    thumbBuff = new BufferedInputStream(thumbIn);
+                    book.setThumbImg(BitmapFactory.decodeStream(thumbBuff));
+                }
+                thumbBuff.close();
+                thumbIn.close();
 
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return "";
+        }
+
+        protected void onPostExecute(String result) {
+            bookAdapter.notifyDataSetChanged();
+        }
+
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

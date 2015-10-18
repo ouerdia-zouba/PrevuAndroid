@@ -53,10 +53,10 @@ public class BookImageAdapter extends ArrayAdapter<Book> implements Filterable {
             convertView = inflater.inflate(R.layout.book_image, parent, false);
         }
         // Now we can fill the layout with the right values
-         tv = (TextView) convertView.findViewById(R.id.item2);
+        tv = (TextView) convertView.findViewById(R.id.item2);
         thumbView = (ImageView) convertView.findViewById(R.id.thumb);
         Book book = arrList.get(position);
-        new GetBookThumb().execute(book.getImage());
+        thumbView.setImageBitmap(book.getThumbImg());
         tv.setText(book.getTitle()+" ("+book.getAuthor_prenom()+" "+book.getAuthor_nom()+", "+book.getPublicationyear()+")    nombre emprunts: "+book.getIssues());
 
 
@@ -65,31 +65,7 @@ public class BookImageAdapter extends ArrayAdapter<Book> implements Filterable {
     }
 
 
-    private class GetBookThumb extends AsyncTask<String, Void, String> {
-        //get thumbnail
-        @Override
-        protected String doInBackground(String... thumbURLs) {
-//attempt to download image
-            try {
-//try to download
-                URL thumbURL = new URL(thumbURLs[0]);
-                URLConnection thumbConn = thumbURL.openConnection();
-                thumbConn.connect();
-                InputStream thumbIn = thumbConn.getInputStream();
-                BufferedInputStream thumbBuff = new BufferedInputStream(thumbIn);
-                thumbImg = BitmapFactory.decodeStream(thumbBuff);
-                thumbBuff.close();
-                thumbIn.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            return "";
-        }
 
-        protected void onPostExecute(String result) {
-            thumbView.setImageBitmap(thumbImg);
-        }
-    }
 }
 
 

@@ -18,9 +18,7 @@
 
     <!-- <string name="url">  192.168.2.1</string>-->
      <!--<string name="url">  172.16.193.25</string>-->
-
- <string name="url">192.168.1.109</string>
-    <!--  <string name="url">192.168.0.13</string> -->
+    <string name="url">192.168.0.13</string>
 
      <string name="thumb">Book thumbnail</string>
      <string name="about">Le projet Prévu, une plateforme fédérant les données de prêts de la

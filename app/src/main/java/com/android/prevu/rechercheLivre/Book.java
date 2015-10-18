@@ -1,5 +1,7 @@
 package com.android.prevu.rechercheLivre;
 
+import android.graphics.Bitmap;
+
 /**
  * Created by Ouerdia on 11/08/2015.
  */
@@ -14,6 +16,7 @@ public class Book {
     private String publicationyear;
     private int biblionumber;
     private String image;
+    private Bitmap thumbImg;
 
     public String getAnnee() {
         return annee;
@@ -115,7 +118,7 @@ public class Book {
         this.id_author = 0;
         this.title = "";
         this.isbn = "";
-      this.description="";
+        this.description="";
         this.issues = 0;
         this.author_nom = "";
         this.author_prenom = "";
@@ -166,6 +169,14 @@ public class Book {
 
     public void setBiblionumber(int biblionumber) {
         this.biblionumber = biblionumber;
+    }
+
+    public Bitmap getThumbImg() {
+        return thumbImg;
+    }
+
+    public void setThumbImg(Bitmap thumbImg) {
+        this.thumbImg = thumbImg;
     }
 
     public Book(int idNotice, String title, String isbn, int issues, String description,
