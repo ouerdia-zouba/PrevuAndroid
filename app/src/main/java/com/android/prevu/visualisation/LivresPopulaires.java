@@ -214,7 +214,7 @@ public class LivresPopulaires extends Activity   implements AdapterView.OnItemSe
                 annee = "2014";
                 invokeWSLivre(new RequestParams(), lienWebService + annee);
                 break;
-            case 3
+            case 3:
                 annee = "2015";
                 invokeWSLivre(new RequestParams(), lienWebService + annee );
                 break;
