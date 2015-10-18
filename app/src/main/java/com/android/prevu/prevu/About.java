@@ -20,6 +20,7 @@ public class About extends Activity {
         //prevu.jpg gabarit.addView(image);
         aboutPrevu = (TextView)findViewById(R.id.aboutPrevu);
         descriptif = (TextView)findViewById(R.id.descriptif);
+        //test
         ActionBar actionBar = getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
