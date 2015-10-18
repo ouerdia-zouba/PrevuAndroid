@@ -56,7 +56,7 @@ public class BookImageAdapter extends ArrayAdapter<Book> implements Filterable {
          tv = (TextView) convertView.findViewById(R.id.item2);
         thumbView = (ImageView) convertView.findViewById(R.id.thumb);
         Book book = arrList.get(position);
-        thumbView.setImageBitmap(book.getThumbImg());
+        new GetBookThumb().execute(book.getImage());
         tv.setText(book.getTitle()+" ("+book.getAuthor_prenom()+" "+book.getAuthor_nom()+", "+book.getPublicationyear()+")    nombre emprunts: "+book.getIssues());
 
 
@@ -65,7 +65,31 @@ public class BookImageAdapter extends ArrayAdapter<Book> implements Filterable {
     }
 
 
+    private class GetBookThumb extends AsyncTask<String, Void, String> {
+        //get thumbnail
+        @Override
+        protected String doInBackground(String... thumbURLs) {
+//attempt to download image
+            try {
+//try to download
+                URL thumbURL = new URL(thumbURLs[0]);
+                URLConnection thumbConn = thumbURL.openConnection();
+                thumbConn.connect();
+                InputStream thumbIn = thumbConn.getInputStream();
+                BufferedInputStream thumbBuff = new BufferedInputStream(thumbIn);
+                thumbImg = BitmapFactory.decodeStream(thumbBuff);
+                thumbBuff.close();
+                thumbIn.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return "";
+        }
 
+        protected void onPostExecute(String result) {
+            thumbView.setImageBitmap(thumbImg);
+        }
+    }
 }
 
 

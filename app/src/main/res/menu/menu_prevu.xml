@@ -2,19 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools" tools:context=".prevu">
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
         android:orderInCategory="100" android:showAsAction="never" />
-    <item android:id="@+id/viz" android:title="@string/action_settings"
-        android:orderInCategory="100"  android:showAsAction="ifRoom"
-        android:icon="@mipmap/ic_launcher_viz"/>
-    <item android:id="@+id/compte" android:title="@string/action_settings"
-        android:orderInCategory="100"  android:showAsAction="ifRoom"
-        android:icon="@mipmap/ic_launcher_compte"/>
-
-    <item android:id="@+id/recherche" android:title="@string/action_settings"
-        android:orderInCategory="100"  android:showAsAction="ifRoom"
-        android:icon="@mipmap/ic_launcher_search"/>
     <item android:id="@+id/about" android:title="@string/action_settings"
         android:orderInCategory="100"  android:showAsAction="ifRoom"
         android:icon="@mipmap/ic_launcher_about"/>
-
-
 </menu>

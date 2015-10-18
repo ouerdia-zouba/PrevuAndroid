@@ -19,7 +19,7 @@
     <!-- <string name="url">  192.168.2.1</string>-->
      <!--<string name="url">  172.16.193.25</string>-->
 
- <string name="url">192.168.0.13</string>
+ <string name="url">192.168.1.109</string>
     <!--  <string name="url">192.168.0.13</string> -->
 
      <string name="thumb">Book thumbnail</string>
@@ -53,5 +53,4 @@
     <string name="title_activity_animation">Animation</string>
     <string name="title_activity_fragment_custom_animations">FragmentCustomAnimations</string>
     <string name="title_activity_card_flip">CardFlipActivity</string>
-    <string name="title_activity_splash_screen">SplashScreen</string>
  </resources>
