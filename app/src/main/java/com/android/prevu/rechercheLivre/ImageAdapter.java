@@ -26,17 +26,17 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookImageAdapter extends ArrayAdapter<Book> implements Filterable {
+public class ImageAdapter extends ArrayAdapter<Book> implements Filterable {
 
 
     private List<Book> arrList;
     private Context context;
     private ImageView thumbView;
-    private TextView tv;
-    private Bitmap thumbImg;
 
 
-    public BookImageAdapter(Context ctx, Activity activity,
+
+
+    public ImageAdapter(Context ctx, Activity activity,
                             ArrayList<Book> arrList) {
         super(ctx, android.R.layout.simple_dropdown_item_1line, arrList);
         this.arrList = arrList;
@@ -50,20 +50,19 @@ public class BookImageAdapter extends ArrayAdapter<Book> implements Filterable {
         if (convertView == null) {
             // This a new view we inflate the new layout
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.book_image, parent, false);
+            convertView = inflater.inflate(R.layout.imagepopulaire, parent, false);
         }
         // Now we can fill the layout with the right values
-         tv = (TextView) convertView.findViewById(R.id.item2);
-        thumbView = (ImageView) convertView.findViewById(R.id.thumb);
+
+        thumbView = (ImageView) convertView.findViewById(R.id.thumb1);
         Book book = arrList.get(position);
         thumbView.setImageBitmap(book.getThumbImg());
-        tv.setText(book.getTitle()+" ("+book.getAuthor_prenom()+" "+book.getAuthor_nom()+", "+book.getPublicationyear()+")    nombre emprunts: "+book.getIssues());
+        //tv.setText(book.getTitle()+" ("+book.getAuthor_prenom()+" "+book.getAuthor_nom()+", "+book.getPublicationyear()+")    nombre emprunts: "+book.getIssues());
 
 
         return convertView;
 
     }
-
 
 
 }
