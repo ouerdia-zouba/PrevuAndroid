@@ -1,29 +1,28 @@
 package com.android.prevu.compte;
 
+import android.app.ActionBar;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.prevu.prevu.ApplicationPrevu;
 import com.android.prevu.prevu.R;
 import com.android.prevu.prevu.prevu;
+import com.android.prevu.rechercheLivre.Recherche;
 import com.android.prevu.rechercheLivre.Utility;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestHandle;
-import com.loopj.android.http.RequestParams;
-import com.loopj.android.http.SyncHttpClient;
 
 import org.apache.http.entity.StringEntity;
-import org.json.JSONException;
 import org.json.JSONObject;
 
-public class LoginActivity1 extends Activity implements View.OnClickListener{
+public class Connection extends Activity implements View.OnClickListener{
 
     // Email, password edittext
     EditText txtUsername, txtPassword;
@@ -55,6 +54,8 @@ public class LoginActivity1 extends Activity implements View.OnClickListener{
 
         // Login button click event
         btnLogin.setOnClickListener(this);
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
@@ -70,7 +71,7 @@ public class LoginActivity1 extends Activity implements View.OnClickListener{
         {
             // user didn't entered username or password
             // Show alert asking him to enter the details
-            alert.showAlertDialog(LoginActivity1.this, "Login failed..", "Please enter valid email and password", false);
+            alert.showAlertDialog(Connection.this, "Login failed..", "Please enter valid email and password", false);
         }
 
     }
@@ -107,16 +108,22 @@ public class LoginActivity1 extends Activity implements View.OnClickListener{
                                     // For testing i am stroing name, email as follow
                                     // Use user real data
                                     session.createLoginSession(txtUsername.getText().toString());
+                                    // Staring MainActivity
+                                    ///Intent i = new Intent(getApplicationContext(), MainActivity.class);
+
 
                                     Intent i = new Intent(getApplicationContext(), Deconnection.class);
-                                    getApplicationContext().startActivity(i);
+                                    startActivity(i);
+                                    finish();
+                                    //getApplicationContext().startActivity(i);
+
 
 
                                 }
                                 else {
 
-                                        // username / password doesn't match
-                                        alert.showAlertDialog(LoginActivity1.this, "Login failed..", "Username/Password is incorrect", false);
+                                    // username / password doesn't match
+                                    alert.showAlertDialog(Connection.this, "Login failed..", "Username/Password is incorrect", false);
 
                                 }
 
@@ -160,5 +167,21 @@ public class LoginActivity1 extends Activity implements View.OnClickListener{
         //homeIntent.putExtra("loginString",username);
         homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(homeIntent);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        Intent intent = new Intent(this, ApplicationPrevu.class); intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

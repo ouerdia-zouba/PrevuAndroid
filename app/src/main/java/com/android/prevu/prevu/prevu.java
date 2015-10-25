@@ -4,11 +4,7 @@ package com.android.prevu.prevu;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.gesture.Gesture;
-import android.gesture.GestureLibraries;
 import android.gesture.GestureLibrary;
-import android.gesture.GestureOverlayView;
-import android.gesture.Prediction;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,16 +14,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-import com.android.prevu.compte.LoginActivity;
-import com.android.prevu.compte.LoginActivity1;
 import com.android.prevu.rechercheLivre.InformationLivre;
 import com.android.prevu.rechercheLivre.Recherche;
 import com.android.prevu.scannerBarCode.IntentIntegrator;
 import com.android.prevu.scannerBarCode.IntentResult;
 
 import com.android.prevu.visualisation.Visualisation;
-
-import java.util.ArrayList;
 
 public class prevu extends Activity implements View.OnClickListener{
     private ImageView recherche;
@@ -41,7 +33,7 @@ public class prevu extends Activity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prevu);
         recherche = (ImageView) findViewById(R.id.recherche);
-        compte = (ImageView) findViewById(R.id.recherche);
+
         scan = (ImageView) findViewById(R.id.scan);
         visualisation = (ImageView) findViewById(R.id.viz);
         about = (ImageView) findViewById(R.id.about);
@@ -79,7 +71,7 @@ public class prevu extends Activity implements View.OnClickListener{
         }
 
          else if (v.getId() == R.id.compte) {
-            Intent i = new Intent(this, LoginActivity1.class);
+            Intent i = new Intent(this, ApplicationPrevu.class);
             startActivity(i);
         }
     }

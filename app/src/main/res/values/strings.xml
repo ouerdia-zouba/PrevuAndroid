@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Prevu</string>
+    <string name="app_name" >Prévu</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -47,4 +47,11 @@
      <string name="title_activity_visualisation_info">VisualisationInfo</string>
      <string name="title_activity_livres_populaires">LivresPopulaires</string>
    <string name="title_activity_login1">LoginActivity1</string>
+
+    <string name="title_activity_prevu">Prévu</string>
+    <string name="title_activity_application_prevu">Prévu</string>
+
+
+    <string name="title_activity_splash_screen">SplashScreen</string>
+
  </resources>

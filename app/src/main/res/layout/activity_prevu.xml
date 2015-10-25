@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:background="@drawable/prevu">
+    android:background="@drawable/prevuuu">
 
 
 
@@ -16,7 +16,7 @@
 
         <ImageView
             android:id="@+id/recherche"
-            android:src="@mipmap/ic_launcher_search"
+            android:src="@mipmap/ic_launcher_recherche1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginBottom="5dp"
@@ -30,7 +30,7 @@
 
         <ImageView
             android:id="@+id/scan"
-            android:src="@mipmap/ic_launcher_scan"
+            android:src="@mipmap/ic_launcher_barcode"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginBottom="5dp"
@@ -49,7 +49,7 @@
         >
         <ImageView
             android:id="@+id/viz"
-            android:src="@mipmap/ic_launcher_viz"
+            android:src="@mipmap/ic_launcher_graphe"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginBottom="50dp"
@@ -63,7 +63,7 @@
             />
         <ImageView
             android:id="@+id/compte"
-            android:src="@mipmap/ic_launcher_compte"
+            android:src="@mipmap/ic_launcher_compte_user"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginBottom="50dp"
@@ -97,7 +97,7 @@
         android:layout_height="wrap_content"
         android:text="Plateforme de visualisation de prêts d'une bibliothèque universitaire"
         android:textStyle="italic"
-        android:textColor="#00BFFF"
+        android:textColor="#febd17"
         android:gravity="center"
         android:textIsSelectable="true"
         android:textAppearance="@style/GreenText"

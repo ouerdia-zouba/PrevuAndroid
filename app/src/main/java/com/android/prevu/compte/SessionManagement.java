@@ -6,8 +6,7 @@ import android.content.Intent;
         import java.util.HashMap;
 
         import android.content.Context;
-        import android.content.Intent;
-        import android.content.SharedPreferences;
+import android.content.SharedPreferences;
         import android.content.SharedPreferences.Editor;
 
 public class SessionManagement {
@@ -62,7 +61,7 @@ public class SessionManagement {
         // Check login status
         if (!this.isLoggedIn()){
             // user is not logged in redirect him to Login Activity
-            Intent i = new Intent(_context, LoginActivity1.class);
+            Intent i = new Intent(_context, Connection.class);
             // Closing all the Activities
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
@@ -99,7 +98,7 @@ public class SessionManagement {
         editor.commit();
 
         // After logout redirect user to Loing Activity
-        Intent i = new Intent(_context, LoginActivity1.class);
+        Intent i = new Intent(_context, Connection.class);
         // Closing all the Activities
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 

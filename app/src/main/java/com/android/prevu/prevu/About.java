@@ -16,7 +16,7 @@ public class About extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
         ImageView image = new ImageView(this);
-        image.setImageResource(R.drawable.prevu);
+        image.setImageResource(R.drawable.prevuuu);
         //prevu.jpg gabarit.addView(image);
         aboutPrevu = (TextView)findViewById(R.id.aboutPrevu);
         descriptif = (TextView)findViewById(R.id.descriptif);
