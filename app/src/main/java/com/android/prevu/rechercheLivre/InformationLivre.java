@@ -114,13 +114,13 @@ public class InformationLivre extends Activity {
             RequestParams params = new RequestParams();
 
             params.put("idLivre", idLivre);
-            url = "http://" + getResources().getString(R.string.url) + ":8888/prevu/api/book/info/" + idLivre;
+            url =  getResources().getString(R.string.url) + "api/android/book/info/" + idLivre;
 
             invokeWS(params);
 
         } else if (getIntent().getExtras().getString("isbn") != null) {
             isbn = getIntent().getExtras().getString("isbn");
-            url = "http://" + getResources().getString(R.string.url) + ":8888/prevu/api/book/isbn/"+isbn;
+            url = getResources().getString(R.string.url) + "api/android/book/isbn/"+isbn;
 
             RequestParams params = new RequestParams();
 
@@ -296,18 +296,18 @@ public class InformationLivre extends Activity {
 
         // Make RESTful webservice call using AsyncHttpClient object
         AsyncHttpClient client = new AsyncHttpClient();
-        RequestHandle requestHandle = client.get("http://" + getResources().getString(R.string.url) + ":8888/prevu/api/ufr/book/" + idLivre, new AsyncHttpResponseHandler() {
+        RequestHandle requestHandle = client.get(getResources().getString(R.string.url) + "api/android/ufr/book/" + idLivre, new AsyncHttpResponseHandler() {
             // When the response returned by REST has Http response code '200'
             @Override
             public void onSuccess(String response) {
                 retourUfr = response;
-                lienWebService = "http://" + getResources().getString(R.string.url) + ":8888/prevu/api/niveau/book/" + idLivre;
+                lienWebService = getResources().getString(R.string.url) + "api/android/niveau/book/" + idLivre;
                 AsyncHttpClient client = new AsyncHttpClient();
                 RequestHandle requestHandle = client.get(lienWebService, new RequestParams(), new AsyncHttpResponseHandler() {
                     @Override
                     public void onSuccess(String response) {
                         chaine = response;
-                        lienWebService = "http://" + getResources().getString(R.string.url) + ":8888/prevu/api/categorie/book/" + idLivre;
+                        lienWebService = getResources().getString(R.string.url) + "api/android/categorie/book/" + idLivre;
                         AsyncHttpClient client = new AsyncHttpClient();
                         RequestHandle requestHandle = client.get(lienWebService, new RequestParams(), new AsyncHttpResponseHandler() {
                             @Override

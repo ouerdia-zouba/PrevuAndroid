@@ -296,7 +296,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
 
 
-            RequestHandle requestHandle = client.post(getApplicationContext(),"http://" + getResources().getString(R.string.url) + ":8888/prevu/api/utilisateur/connection",
+            RequestHandle requestHandle = client.post(getApplicationContext(), getResources().getString(R.string.url) + "api/android/utilisateur/connection",
                     entity, "application/json", new AsyncHttpResponseHandler() {
 
 

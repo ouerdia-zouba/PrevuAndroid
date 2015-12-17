@@ -69,32 +69,32 @@ public class VisualisationInfo extends Activity implements AdapterView.OnItemSel
                 spinner.setOnItemSelectedListener(this);
                 spinner.setVisibility(View.VISIBLE);
                 lienJavaScript = "file:///android_asset/chartCountIssueByMonth.html";
-                lienWebService = "http://" + getResources().getString(R.string.url) + ":8888/prevu/api/stats/issues/years/month/";
+                lienWebService = getResources().getString(R.string.url) + "api/android/stats/issues/years/month/";
                 break;
             case 1:
-                lienWebService = "http://" + getResources().getString(R.string.url) + ":8888/prevu/api/stats/issues/years/semestre";
+                lienWebService = getResources().getString(R.string.url) + "api/android/stats/issues/years/semestre";
                 lienJavaScript = "file:///android_asset/chartCountIssueBySemestre.html";
                 invokeWS(new RequestParams(),lienWebService , lienJavaScript);
                 break;
             case 2:
-                lienWebService = "http://" + getResources().getString(R.string.url) + ":8888/prevu/api/stats/issues/years/dayofweek";
+                lienWebService = getResources().getString(R.string.url) + "api/android/stats/issues/years/dayofweek";
                 lienJavaScript = "file:///android_asset/empruntsJourSemaine.html";
                 invokeWS(new RequestParams(),lienWebService , lienJavaScript);
                 break;
             case 3:
-                lienWebService = "http://" + getResources().getString(R.string.url) + ":8888/prevu/api/issues/matiere/";
+                lienWebService = getResources().getString(R.string.url) + "api/android/issues/matiere/";
                 spinner.setOnItemSelectedListener(this);
                 spinner.setVisibility(View.VISIBLE);
                 lienJavaScript = "file:///android_asset/matierePlusEmprunteesAnnee.html";
                 break;
             case 5:
-                lienWebService = "http://" + getResources().getString(R.string.url) + ":8888/prevu/api/stats/issues/ufr";
+                lienWebService = getResources().getString(R.string.url) + "api/android/stats/issues/ufr";
                 lienJavaScript = "file:///android_asset/chartCountIssueByUFR.html";
                 invokeWS(new RequestParams(),lienWebService , lienJavaScript);
                 break;
 
             case 6:
-                lienWebService = "http://" + getResources().getString(R.string.url) + ":8888/prevu/api/stats/issues/categorie";
+                lienWebService = getResources().getString(R.string.url) + "api/android/stats/issues/categorie";
                 lienJavaScript = "file:///android_asset/chartCategorieIssues.html";
                 invokeWS(new RequestParams(),lienWebService , lienJavaScript);
                 break;

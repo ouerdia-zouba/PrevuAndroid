@@ -18,7 +18,7 @@
 
       // Create the data table.
       var data = new google.visualization.DataTable();
-      data.addColumn('string', 'Description');
+      data.addColumn('string', 'description');
       data.addColumn('number', 'issues');
 
 
@@ -34,14 +34,12 @@ for (var i = 0; i < tab.length; i++) {
        }
 
 
-//for (var i = 0; i < 5; i++) {
- //data.setCell(i,0 , Android.getNextCategorie());
-  //data.setCell(i, 1, Android.getNextEmprunt());
-      // }
-
 
       // Set chart options
-      var options = {'title':'Les catégories les plus empruntés'};
+      var options = {'title':'Les catégories les plus empruntés',
+                    pieHole: 0.4,
+                    sliceVisibilityThreshold: .000001
+                     };
 
       // Instantiate and draw our chart, passing in some options.
       var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
@@ -51,7 +49,6 @@ for (var i = 0; i < tab.length; i++) {
 </head>
 
 <body>
-<!--Div that will hold the pie chart-->
 <div id="chart_div"></div>
 Voici le diagramme qui représente le nombre d'emprunts par Catégorie
 </body>

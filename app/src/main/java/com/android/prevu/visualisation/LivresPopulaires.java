@@ -80,7 +80,7 @@ public class LivresPopulaires extends Activity   implements AdapterView.OnItemSe
         spinner.setAdapter(anneeAdapter);
 
 
-        lienWebService = "http://" + getResources().getString(R.string.url) + ":8888/prevu/api/issues/livre/";
+        lienWebService = getResources().getString(R.string.url) + "api/android/issues/livre/";
         spinner.setOnItemSelectedListener(this);
         prgDialog = new ProgressDialog(this);
         prgDialog.setMessage("Please wait...");

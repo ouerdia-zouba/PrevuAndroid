@@ -18,7 +18,8 @@
 
         <activity
             android:name=".SplashScreen"
-            android:label="@string/title_activity_splash_screen"
+            android:label="@string/title_activity_application_prevu"
+            android:icon="@mipmap/ic_launcher_app"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Black.NoTitleBar" >
             <intent-filter>

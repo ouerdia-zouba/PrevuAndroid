@@ -18,40 +18,43 @@
 
     <!-- <string name="url">  192.168.2.1</string>-->
      <!--<string name="url">  172.16.193.25</string>-->
-    <string name="url">192.168.0.13</string>
-
-     <string name="thumb">Book thumbnail</string>
-     <string name="about">Le projet Prévu, une plateforme fédérant les données de prêts de la
- bibliothèque universitaire de Paris 8 et visant à générer de nouvelles pratiques par le
- biais de visualisations. Les imbrications entre la conceptualisation technique et les
- scénarisations d’usage interrogent la conservation des données, les systèmes
- d’information permettant leur acquisition et diffusion, et la réalisation
- d’infrastructures génératrices de services. Après avoir inscrit le projet Prévu dans le
- champ des humanités numériques, nous présentons le corpus de données sur lequel
- nous nous sommes appuyés, puis son écosystème technique, avant de nous
- interroger sur les différents usages qu’une telle plateforme peut générer. Cette
- démonstration se fonde à partir d’une application web développée pour le projet,
- que nous présentons et qui est consultable en ligne :</string>
-     <string-array name="visualisations">
-         <item>Nombre d\'emprunts par mois</item>
-         <item>Nombre d\'emprunts par semestre</item>
-         <item>Nombre d\'emprunts par jour de semaine</item>
-         <item>Matières plus empruntées par année</item>
-         <item>Livres plus empruntées par année</item>
-         <item>Nombre d\'emprunts par UFR</item>
-         <item>Nombre d\'emprunts par catégorie</item>
-     </string-array>
-     <string name="title_activity_test">Test</string>
-     <string name="title_activity_deconnection">Deconnection</string>
-     <string name="title_activity_liste_visualisation">ListeVisualisation</string>
-     <string name="title_activity_visualisation_info">VisualisationInfo</string>
-     <string name="title_activity_livres_populaires">LivresPopulaires</string>
-   <string name="title_activity_login1">LoginActivity1</string>
-
-    <string name="title_activity_prevu">Prévu</string>
-    <string name="title_activity_application_prevu">Prévu</string>
+    <!-- <string name="url">192.168.0.11</string>-->
+    <!-- <string name="url">http://192.168.0.11:8888/prevu/</string>-->
+    <string name="url">http://prevu.labex-arts-h2h.fr/</string>
 
 
-    <string name="title_activity_splash_screen">SplashScreen</string>
+    <string name="thumb">Book thumbnail</string>
+    <string name="about">Le projet Prévu, une plateforme fédérant les données de prêts de la
+bibliothèque universitaire de Paris 8 et visant à générer de nouvelles pratiques par le
+biais de visualisations. Les imbrications entre la conceptualisation technique et les
+scénarisations d’usage interrogent la conservation des données, les systèmes
+d’information permettant leur acquisition et diffusion, et la réalisation
+d’infrastructures génératrices de services. Après avoir inscrit le projet Prévu dans le
+champ des humanités numériques, nous présentons le corpus de données sur lequel
+nous nous sommes appuyés, puis son écosystème technique, avant de nous
+interroger sur les différents usages qu’une telle plateforme peut générer. Cette
+démonstration se fonde à partir d’une application web développée pour le projet,
+que nous présentons et qui est consultable en ligne :</string>
+    <string-array name="visualisations">
+        <item>Nombre d\'emprunts par mois</item>
+        <item>Nombre d\'emprunts par semestre</item>
+        <item>Nombre d\'emprunts par jour de semaine</item>
+        <item>Matières plus empruntées par année</item>
+        <item>Livres plus empruntées par année</item>
+        <item>Nombre d\'emprunts par UFR</item>
+        <item>Nombre d\'emprunts par catégorie</item>
+    </string-array>
+    <string name="title_activity_test">Test</string>
+    <string name="title_activity_deconnection">Deconnection</string>
+    <string name="title_activity_liste_visualisation">ListeVisualisation</string>
+    <string name="title_activity_visualisation_info">VisualisationInfo</string>
+    <string name="title_activity_livres_populaires">LivresPopulaires</string>
+  <string name="title_activity_login1">LoginActivity1</string>
 
- </resources>
+   <string name="title_activity_prevu">Prévu</string>
+   <string name="title_activity_application_prevu">Prévu</string>
+
+
+   <string name="title_activity_splash_screen">SplashScreen</string>
+
+</resources>

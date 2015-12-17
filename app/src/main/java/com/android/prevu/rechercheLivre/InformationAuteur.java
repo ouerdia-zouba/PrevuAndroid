@@ -66,7 +66,7 @@ public class InformationAuteur extends Activity implements AdapterView.OnItemCli
         prgDialog.show();
         // Make RESTful webservice call using AsyncHttpClient object
         AsyncHttpClient client = new AsyncHttpClient();
-        client.get("http://"+getResources().getString(R.string.url)+":8888/prevu/api/author/search/id/" + id_auteur, params, new AsyncHttpResponseHandler() {
+        client.get(getResources().getString(R.string.url)+"api/android/author/search/id/" + id_auteur, params, new AsyncHttpResponseHandler() {
             // When the response returned by REST has Http response code '200'
             @Override
             public void onSuccess(String response) {
@@ -124,7 +124,7 @@ public class InformationAuteur extends Activity implements AdapterView.OnItemCli
         prgDialog.show();
         // Make RESTful webservice call using AsyncHttpClient object
         AsyncHttpClient client = new AsyncHttpClient();
-        client.get("http://"+getResources().getString(R.string.url)+":8888/prevu/api/book/search/title/"+id_auteur, params, new AsyncHttpResponseHandler() {
+        client.get(getResources().getString(R.string.url)+"api/android/book/search/title/"+id_auteur, params, new AsyncHttpResponseHandler() {
             // When the response returned by REST has Http response code '200'
             @Override
             public void onSuccess(String response) {

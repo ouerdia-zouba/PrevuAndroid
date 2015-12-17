@@ -102,7 +102,7 @@ public class Recherche extends Activity implements View.OnClickListener, TextWat
         AsyncHttpClient client = new AsyncHttpClient();
 
 
-        RequestHandle requestHandle = client.get("http://" + getResources().getString(R.string.url) + ":8888/prevu/api/book/search/" + titre, params,
+        RequestHandle requestHandle = client.get(getResources().getString(R.string.url) + "api/android/book/search/" + titre, params,
                 new AsyncHttpResponseHandler() {
 
 
@@ -151,7 +151,7 @@ public class Recherche extends Activity implements View.OnClickListener, TextWat
         // Make RESTful webservice call using AsyncHttpClient object
         AsyncHttpClient client = new AsyncHttpClient();
 
-        RequestHandle requestHandle = client.get("http://" + getResources().getString(R.string.url) + ":8888/prevu/api/author/search/" + auteur, params, new AsyncHttpResponseHandler() {
+        RequestHandle requestHandle = client.get(getResources().getString(R.string.url) + "api/android/author/search/" + auteur, params, new AsyncHttpResponseHandler() {
             // When the response returned by REST has Http response code '200'
             @Override
             public void onSuccess(String response) {
